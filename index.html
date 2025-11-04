@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dynamic To Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <main class="container">
+    <h1>To Do List</h1>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <input id="task-input" type="text" placeholder="Add a new task..." />
+      <button id="add-btn" type="submit">Add</button>
+    </form>
+
+    <div class="controls">
+      <div class="left">
+        <span id="count">0 tasks</span>
+      </div>
+      <div class="right">
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button id="clear-completed">Clear completed</button>
+      </div>
+    </div>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+    <footer class="footer">
+     <p>Built with HTML, CSS & JavaScript • Tasks are saved in localStorage
+      <br>By Zulqarnain Haider</p>
+    </footer>
+  </main>
+
+  <template id="task-template">
+    <li class="task-item">
+      <label class="task-main">
+        <input class="toggle" type="checkbox" />
+        <span class="task-title"></span>
+      </label>
+      <div class="task-actions">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
